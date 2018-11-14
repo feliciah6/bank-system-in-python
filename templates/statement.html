@@ -1,0 +1,43 @@
+{% extends 'layout.html'%}
+
+{% block content%}
+<body>
+  <div class="container">
+    <table class="table">
+      <thead>
+    <tr>
+        
+        
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Action</th>
+        <th>Balance</th>
+      
+       
+
+        
+      </tr>
+    </thead>
+    <tbody>
+     {% for statement in statements %} 
+      <tr>
+        
+           
+           
+            <td>{{statement.date}}</td>
+            <td>{{statement.amount}}</td>
+            <td>{{statement.action}}</td>
+            <td>{{statement.balance}}</td>
+           
+      </tr>
+      {% endfor %}
+
+    </tbody>
+
+    </table>
+    <a href="{{url_for('register')}}"><button  class="btn btn-primary">New Transaction</button></a>
+     <!-- <li>  <a href="/salon">Add more salons </a> </li> -->
+    
+  </div>
+</body>
+{% endblock %}
